@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <html>
-
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="imageuploader.css">
     </head>
-
     <body>
         <div class="preview">
             <p><img id="output" width="200px"></p>
+            <p id="result" style="display: none;"></p>
             <div class="desc">
                     <form action="/action_page.php">
                         <label>Choose File
@@ -19,7 +17,7 @@
                     </form> 
                     <div class="container">
                         <div class="center">
-                          <button class="btn">
+                          <button class="btn" type="submit" onclick="rembuttons()">
                             <svg width="70px" height="30px" viewBox="0 0 70 30" class="border">
                                 <polyline points="69,1 69,29 1,29 1,1 69,1">
                             </svg>
@@ -34,8 +32,20 @@
                 var image = document.getElementById('output');
                 image.src = URL.createObjectURL(event.target.files[0]);
             };
+            function getResult(result){
+                result_box = document.getElementById('result');
+                result_box.innerHTML = result;
+                result_box.style.display = "block";
+            }
+            function rembuttons(){
+                // img = document.getElementById("img");
+                // sub = document.getElementById("submit");
+                // img.style.display = "none";
+                // sub.style.display = "none";
+                document.querySelector(".desc").style.display = "none";
+                getResult("Jaa");
+            }
         </script>
     </body>
-
 </html>
 
