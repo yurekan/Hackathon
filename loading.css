@@ -1,0 +1,51 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    background-color: aliceblue;  
+}
+
+.Loading
+{
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    transform: translate();
+    height: 100px;
+    width: 100px;
+    border: 3px solid  #d1e0e0;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 100px;
+    font-family: "Oswald";
+    letter-spacing: 2px;
+    color:  #ff1aff;
+    font-weight: bolder;
+    text-shadow: 0 0 10px #b300b3;
+}
+
+.Loading:before
+{
+    content: '';
+    border-top: 3px solid #ff1aff;
+    border-right: 3px solid #ff1aff;
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: loader 2s linear infinite;
+}
+
+@keyframes loader
+{
+    0%
+    {
+        transform: rotate(0);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
